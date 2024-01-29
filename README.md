@@ -103,4 +103,4 @@ python val_openlane.py
 | Ours | 57.0 | 48.9 | 62.3 | 54.8 | 52.0 | 50.2 | 52.1 | 
 
 ## Visualization
-<p align="center"><img src="images/openlane.jpg" width="1000"/></p>
+<p align="center"><img src="openlane.jpg" width="1000"/></p>
