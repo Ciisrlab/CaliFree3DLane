@@ -1,5 +1,8 @@
 # CaliFree3DLane
-- :oncoming_automobile: **The complete code will be released after work is accepted** 
+<p align="justify">
+Monocular 3D lane detection plays a crucial role in autonomous driving, assisting vehicles in safe navigation. Existing methods primarily utilize calibrated camera parameters in the dataset to conduct 3D lane detection from a single image. However, errors or sudden absence of camera parameters can pose significant challenges to safe driving. On one hand, this can lead to incorrect feature acquisition, which further affects the precision of lane detection. On the other hand, it renders methods relying on transformation matrices for temporal fusion ineffective. To address the above issue and achieve accurate 3D lane detection, we propose CaliFree3DLane, a calibration-free method for spatio-temporal 3D lane detection based on Transformer structure. Instead of using geometric projections to obtain static reference points on images, we propose a reference point refinement strategy that dynamically updates the reference points and finally generates appropriate sampling points for image feature extraction. To integrate multi-frame features, we generate sub-queries from the current scene query to focus on the image features of each frame independently. We then aggregate these sub-queries to form a more comprehensive scene query for 3D lane detection. Using these operations, CaliFree3DLane accurately transforms multi-frame image features into the current bird's-eye view (BEV) space, enabling precise 3D lane detection. Experimental results show that our CaliFree3DLane achieves state-of-the-art 3D lane detection performance in various datasets.
+</p>
+    
 ## Environment Setup
 
 - We develop with PyTorch 1.8 and recommend you to use Anaconda to create a conda environment before installing the dependencies
@@ -81,7 +84,7 @@ python val_openlane.py
 | PersFormer | 50.5 |0.485|0.553|0.364|0.431|
 | Anchor3DLane | 54.3 | 0.275 |0.310|0.105|0.135|
 | BEV-LaneDet | 58.4 | 0.309 |0.659|0.244|0.631|
-| Ours | 58.8| 0.273|0.687 | 0.201| 0.626|
+| Ours | 59.2| 0.238|0.527 | 0.173| 0.387|
 
 | Method     | All  | Up&<br>Down | Curve | Extreme<br>Weather | Night | Intersection | Merge&<br>Split |
 | :----:     |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -104,3 +107,13 @@ python val_openlane.py
 
 ## Visualization
 <p align="center"><img src="openlane.jpg" width="1000"/></p>
+
+## Acknowledgement
+
+This repo is based on following works:
+- [BEV-LaneDet](https://github.com/gigo-team/bev_lane_det)
+- [SeqFormer](https://github.com/wjf5203/SeqFormer)
+- [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) 
+
+Thanks for their wonderful contribution.
+
